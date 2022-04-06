@@ -28,7 +28,7 @@ export default class TodoList extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/todo')
+        axios.get('https://qudustodo.herokuapp.com/todo/find')
         .then(response => {
             this.setState({
                 todos: response.data

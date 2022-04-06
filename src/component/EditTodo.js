@@ -19,7 +19,7 @@ const EditTodo = () => {
 
         onSubmit: async (values) => {
             try {
-                await axios.post(`https://kudiii.herokuapp.com/auth/register`, values)
+                await axios.post(`https://qudustodo.herokuapp.com/todo/`, values)
             } catch (err) {
                 
              }
