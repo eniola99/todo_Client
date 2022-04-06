@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import React, from 'react'
 import axios from 'axios'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Typography } from 'antd'
 
 const EditTodo = () => {
-    const [ newTask, setNewTask ] = useState('')
-    const [ description, setDescription ] = useState('')
 
     const formik = useFormik({
         initialValues: {
-            newTask: newTask, description: description,
+            newTask: " ", description: " ",
         },
         validationSchema: Yup.object({
             newTask: Yup.string().required('Required'),
@@ -19,7 +17,7 @@ const EditTodo = () => {
 
         onSubmit: async (values) => {
             try {
-                await axios.post(`https://qudustodo.herokuapp.com/todo/`, values)
+                await axios.post(`https://qudustodo.herokuapp.com/todo/${id}`, values)
             } catch (err) {
                 
              }
