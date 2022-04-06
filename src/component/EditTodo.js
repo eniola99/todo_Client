@@ -22,7 +22,7 @@ const EditTodo = () => {
 
         onSubmit: async (values) => {
             try {
-                await axios.put(`{https://qudustodo.herokuapp.com/todo/${id}}`, values)
+                await axios.put(`https://qudustodo.herokuapp.com/todo/${id}`, values)
                 navigate("/")
             } catch (err) {
                 
