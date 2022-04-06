@@ -11,10 +11,9 @@ const CreateTodo = () => {
     const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
-            newTask: '', description: '',
+            description: '',
         },
         validationSchema: Yup.object({
-            newTask: Yup.string().required('Required'),
             description: Yup.string().required('Required'),
         }),
 
@@ -32,10 +31,7 @@ const CreateTodo = () => {
         <div className='container'>
         <Typography.Title level={3} style={{textAlign: 'center', padding: 30, margin: 20}}>Create todo</Typography.Title>
         <form onSubmit={formik.handleSubmit} className='form-style'>
-            <label htmlFor='newTask'>New task</label>
-            <input type='text' name='newTask' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.newTask}/>
-            {formik.touched.newTask && formik.errors.newTask ? (<div className='required'>{formik.errors.newTask}</div>) : null}
-
+           
             <label htmlFor='description'>Description</label>
             <input type='text' name='description' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.description}/>
             {formik.touched.description && formik.errors.description ? (<div className='required'>{formik.errors.description}</div>) : null}

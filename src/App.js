@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import CreateTodo from './component/CreateTodo'
 import TodosList from './component/TodoList'
@@ -18,16 +19,13 @@ function App() {
                 <li className="navbar-item">
                   <Link to="/create" className="nav-link">Create Todo</Link>
                 </li>
-                <li className="navbar-item">
-                  <Link to="/edit/:id" className="nav-link">Edit Todo</Link>
-                </li>
               </ul>
             </div>
           </nav>
           <br/>
           <Routes>
             <Route path="/" exact element={< TodosList />} />
-            <Route path="/edit/:id" exact element={< EditTodo />} />
+            <Route path="/edit/" exact element={< EditTodo />} />
             <Route path="/create" exact element={< CreateTodo />} />
           </Routes>
         </div>
