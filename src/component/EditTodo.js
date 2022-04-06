@@ -17,13 +17,12 @@ const EditTodo = () => {
             description: " ",
         },
         validationSchema: Yup.object({
-            newTask: Yup.string().required('Required'),
             description: Yup.string().required('Required'),
         }),
 
         onSubmit: async (values) => {
             try {
-                await axios.put(`https://qudustodo.herokuapp.com/todo/${id}`, values)
+                await axios.put(`{https://qudustodo.herokuapp.com/todo/${id}}`, values)
                 navigate("/")
             } catch (err) {
                 
@@ -36,7 +35,7 @@ const EditTodo = () => {
         <Typography.Title level={3} style={{textAlign: 'center', padding: 30, margin: 20}}>This is Edit todo</Typography.Title>
         <form onSubmit={formik.handleSubmit} className='form-style'>
           
-            <label htmlFor='description'>Description {id}</label>
+            <label htmlFor='description'>Description</label>
             <input type='text' name='description' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.description}/>
             {formik.touched.description && formik.errors.description ? (<div className='required'>{formik.errors.description}</div>) : null}
             
