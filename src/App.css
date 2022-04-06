@@ -27,17 +27,7 @@
     padding: 12px 12px 12px 0;
     display: inline-block;
   }
-  
-  /* Style the submit button */
-  input[type=submit] {
-    background-color: 	#072A6C;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-  }
+
   
   /* Style the container */
   .container {
@@ -53,19 +43,8 @@
     }
   }
   
-  a:hover{
-    color: var(--pink) !important;
-  }
-  
   .app{
     display: flex;
     overflow: hidden;
-  }
-  
-
-  .homepage{
-  
-    margin: 1rem 0;
-    text-align: center
   }
  

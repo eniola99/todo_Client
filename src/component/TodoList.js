@@ -1,4 +1,3 @@
-
 import React, {useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -27,10 +26,9 @@ const TodoList = () => {
                     <tbody>
                     {task.map((activeTodo, i) => (
                         <>
-                        <div>
                             <p>{activeTodo.description}</p>
+                            
                             <p><Link to={`/edit/${activeTodo._id}`}>Edit</Link></p>
-                        </div>
                         </>
                     ))}
                     </tbody>
