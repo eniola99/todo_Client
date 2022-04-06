@@ -16,6 +16,7 @@ const TodoList = () => {
     useEffect(() => {
         handleFetch()
     }, [])
+
     return (
         <div>
              <h3>Todo List</h3>
@@ -25,7 +26,7 @@ const TodoList = () => {
                         <>
                         <div>
                             <p>{activeTodo.description}</p>
-                            <p><Link to="/edit/">Edit</Link></p>
+                            <p><Link to={`/edit/${activeTodo._id}`}>Edit</Link></p>
                         </div>
                         </>
                     ))}

@@ -25,7 +25,7 @@ function App() {
           <br/>
           <Routes>
             <Route path="/" exact element={< TodosList />} />
-            <Route path="/edit/" exact element={< EditTodo />} />
+            <Route path="/edit/:id" exact element={< EditTodo />} />
             <Route path="/create" exact element={< CreateTodo />} />
           </Routes>
         </div>
