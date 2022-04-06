@@ -17,7 +17,7 @@ const EditTodo = () => {
 
         onSubmit: async (values) => {
             try {
-                await axios.post(`https://qudustodo.herokuapp.com/todo/${params.id}`, values)
+                await axios.post(`https://qudustodo.herokuapp.com/todo/+params.id`, values)
             } catch (err) {
                 
              }
