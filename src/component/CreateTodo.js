@@ -3,10 +3,12 @@ import axios from 'axios'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Typography } from 'antd'
+import { useNavigate } from 'react-router-dom'
+
 
 const CreateTodo = () => {
 
-
+    const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
             newTask: '', description: '',
@@ -19,16 +21,18 @@ const CreateTodo = () => {
         onSubmit: async (values) => {
             try {
                 await axios.post(`https://qudustodo.herokuapp.com/todo/register`, values)
+                navigate("/")
             } catch (err) {
                 
              }
+
         }
     })
     return (
         <div className='container'>
         <Typography.Title level={3} style={{textAlign: 'center', padding: 30, margin: 20}}>Create todo</Typography.Title>
         <form onSubmit={formik.handleSubmit} className='form-style'>
-            <label htmlFor='firstName'>New task</label>
+            <label htmlFor='newTask'>New task</label>
             <input type='text' name='newTask' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.newTask}/>
             {formik.touched.newTask && formik.errors.newTask ? (<div className='required'>{formik.errors.newTask}</div>) : null}
 
